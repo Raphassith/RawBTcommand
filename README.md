@@ -1,13 +1,46 @@
 # RawBTcommand
 การใช้งาน RawBT
 <div style="white-space: break-spaces;">
-        สร้าง URL Protocol สำหรับการพิมพ์:\n
-        ตัวอย่างคำสั่ง:\n
-        ### ตัวอย่างข้อความพร้อมคำสั่ง:\n
-        ```\n
-        rawbt://print?text=Hello%20World&align=center\n
-        ```\n
+        การสั่งพิมพ์ใบเสร็จในรูปแบบ **Short form** ผ่าน RawBT ด้วยการใช้ URL Protocol เป็นไปได้และค่อนข้างยืดหยุ่น เนื่องจาก RawBT รองรับการทำงานผ่าน **Intent** และสามารถใช้ URL Protocol เพื่อส่งคำสั่งพิมพ์ได้โดยตรงจากแอปพลิเคชันหรือเว็บเบราว์เซอร์
 
+### วิธีการตั้งค่าและใช้งาน
+1. **ตรวจสอบการติดตั้ง RawBT:**
+   - ดาวน์โหลดและติดตั้งแอป RawBT จาก [Google Play Store](https://play.google.com/store/apps/details?id=ru.a402d.rawbtprinter)
+
+2. **ตรวจสอบว่าเครื่องพิมพ์เชื่อมต่อกับ RawBT ได้หรือไม่:**
+   - เปิด RawBT และตั้งค่าเครื่องพิมพ์ของคุณ (เช่น Bluetooth หรือ USB)
+   - ทดสอบพิมพ์เพื่อให้แน่ใจว่าเชื่อมต่อได้สำเร็จ
+
+3. **สร้าง URL Protocol สำหรับการพิมพ์:**
+   - RawBT ใช้รูปแบบ URL protocol `rawbt:` เพื่อรับคำสั่งพิมพ์
+   - ตัวอย่างคำสั่ง:  
+     ```
+     rawbt://print?text=Hello%20World&align=center
+     ```
+   - พารามิเตอร์ที่สำคัญ:
+     - `text`: ข้อความที่จะพิมพ์
+     - `align`: ตำแหน่งข้อความ (`left`, `center`, `right`)
+     - `cut`: ส่งคำสั่งตัดกระดาษ (เช่น `cut=true`)
+
+4. **ตัวอย่างการใช้งาน (JavaScript/HTML):**
+   หากคุณมีเว็บแอป คุณสามารถใช้ `<a>` tag หรือ JavaScript เพื่อเรียก URL:
+   ```html
+   <a href="rawbt://print?text=Thank%20you%20for%20your%20purchase&align=center&cut=true">พิมพ์ใบเสร็จ</a>
+   ```
+
+5. **การปรับแต่งเพิ่มเติมสำหรับ Short form:**
+   - คุณสามารถปรับแต่งรูปแบบข้อความได้ เช่น:
+     ```
+     rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
+     ```
+     - `%0A` คือการขึ้นบรรทัดใหม่
+
+6. **เปิด URL Protocol ผ่าน Intent (ใน Android):**
+   หากคุณเขียนแอป Android สามารถใช้ Intent เพื่อส่งคำสั่ง URL ได้:
+   ```java
+   Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("rawbt://print?text=Hello%20RawBT&align=center"));
+   startActivity(intent);
+   ```
 
         ในการสร้างข้อความสำหรับการพิมพ์ผ่าน **RawBT** หรือเครื่องพิมพ์ที่ใช้ **ESC/POS Protocol**
         มีคำสั่งสำคัญที่ควรทราบเพื่อจัดรูปแบบข้อความ เช่น การขึ้นบรรทัดใหม่ การจัดตำแหน่ง การเพิ่มความหนาของข้อความ ฯลฯ
