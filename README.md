@@ -1,12 +1,12 @@
 # RawBTcommand
 การใช้งาน RawBT
 <div style="white-space: break-spaces;">
-        สร้าง URL Protocol สำหรับการพิมพ์:
-        ตัวอย่างคำสั่ง:
-        ### ตัวอย่างข้อความพร้อมคำสั่ง:
-        ```
-        rawbt://print?text=Hello%20World&align=center
-        ```
+        สร้าง URL Protocol สำหรับการพิมพ์:\n
+        ตัวอย่างคำสั่ง:\n
+        ### ตัวอย่างข้อความพร้อมคำสั่ง:\n
+        ```\n
+        rawbt://print?text=Hello%20World&align=center\n
+        ```\n
 
 
         ในการสร้างข้อความสำหรับการพิมพ์ผ่าน **RawBT** หรือเครื่องพิมพ์ที่ใช้ **ESC/POS Protocol**
