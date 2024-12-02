@@ -171,6 +171,8 @@ Total                          105.00
            Thank You
 ```
 
+
+
 คำสั่ง ESC/POS สำหรับพิมพ์เฉพาะ QR Code ที่มีข้อมูลว่า **Hello** โดยใช้ RawBT:
 
 ---
