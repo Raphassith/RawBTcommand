@@ -1,15 +1,15 @@
-5. **การปรับแต่งเพิ่มเติมสำหรับ Short form:**
-   - คุณสามารถปรับแต่งรูปแบบข้อความได้ เช่น:
+**การเขียน App Formula สำหรับ AppSheet **
+   - initRaw:
      ```
      rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
      ```
-5. **การปรับแต่งเพิ่มเติมสำหรับ Short form:**
-   - คุณสามารถปรับแต่งรูปแบบข้อความได้ เช่น:
+
+   - itemRaw:
      ```
      rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
      ```
-5. **การปรับแต่งเพิ่มเติมสำหรับ Short form:**
-   - คุณสามารถปรับแต่งรูปแบบข้อความได้ เช่น:
+
+   - closeRaw:
      ```
      rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
      ```
