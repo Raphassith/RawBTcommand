@@ -16,7 +16,7 @@
      CONCATENATE(
      [raw], 
      INDEX([items][name], [loopno]), "%0A", 
-     "(", INDEX([items][price], [loopno]), " x ", INDEX([items][qty],[loopno]), ")%09%09%09%09%09%09%09", INDEX([items][amount],[loopno]), "%0A"
+     "(", INDEX([items][price], [loopno]), " x ", INDEX([items][qty],[loopno]), ")%09%09%09%09%09%09%09%09%09", INDEX([items][amount],[loopno]), "%0A"
      )
      ```
 
@@ -25,7 +25,7 @@
      CONCATENATE(
      [raw], 
      "----------------------------%0A", 
-     "Total:%09%09%09%09%09%09%09%09%09", [total], "%0A", 
+     "Total:%09%09%09%09%09%09%09%09%09%09", [total], "%0A", 
      "Cash:%09%09%09%09%09%09%09%09%09%09", [cash], "%0A", 
      "change:%09%09%09%09%09%09%09%09%09", [change], "%0A", 
      "----------------------------%0AThank You%0A", 
