@@ -1,15 +1,33 @@
 **การเขียน App Formula สำหรับ AppSheet **
    - initRaw:
      ```
-     rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
+     CONCATENATE(
+     "rawbt:", 
+     "//print?text=",
+     "Receipt No: ", [no],"%0A",
+     "Date: ", [date], "%0A",
+     "Time: ", [time], "%0A",
+     "----------------------------%0A"
+     )
      ```
 
    - itemRaw:
      ```
-     rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
+     CONCATENATE(
+     [raw],
+     INDEX([items][name], [loopno]), "%0A",
+     "(", INDEX([items][price], [loopno]), " x ", INDEX([items][qty],[loopno]), ")%09%09%09%09%09%09%09",INDEX([items][amount],[loopno]), "%0A"
+     )
      ```
 
    - closeRaw:
      ```
-     rawbt://print?text=Order%20%23123%0AItem%20A%20x2%20-%20$10.00%0AItem%20B%20x1%20-%20$5.00%0ATotal:%20$15.00&align=left&cut=true
+     CONCATENATE(
+     [raw],
+     "----------------------------%0A",
+     "Total:%09%09%09%09%09%09%09%09%09", [total], "%0A",
+     "Cash:%09%09%09%09%09%09%09%09%09%09", [cash], "%0A",
+     "change:%09%09%09%09%09%09%09%09%09", [change], "%0A",
+     "----------------------------%0AThank You%0A",
+     "%1D%56%00"
      ```
